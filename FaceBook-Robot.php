@@ -88,14 +88,17 @@ mysqli_query($link, "UPDATE RobotSays SET posted = 1 WHERE ID = '$ID'");
 mysqli_free_result($result);
 
 // =================== FACEBOOK =======================
-//Need a random number for random inage:
-$num = rand(10,36);
+// Need a random number for random inage:
+// use improved-show-img.php. No longer need this:
+// $num = rand(10,36);
 
 // echo $Content;
 
 $page_access_token = '<a bunch of numbers and letter strung together which you receive when you create a FB app>'; // this could be added to the DB or in another file.
 // See script to display an image "show-img.php . This adds a random image to the FB post:
-$data['source'] = "https://anti-robot.org/apps/facebook/show-img.php?fileNum=$num"; // deprecated but works
+// $data['source'] = "https://anti-robot.org/apps/facebook/show-img.php?fileNum=$num"; // deprecated but works
+// updated to use improved-show-img.php:
+$data['source'] = "https://anti-robot.org/apps/facebook/improved-show-img.php"; // deprecated but works
 $data['message'] = "$Content";
 $data['name'] = "Robots doing things";
 $data['access_token'] = $page_access_token;
